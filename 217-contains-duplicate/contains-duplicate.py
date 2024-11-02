@@ -5,7 +5,6 @@ class Solution:
         for number in nums:
             if number not in visited:
                 visited.add(number)
-                continue
         
         if len(visited) < len(nums):
             return True
