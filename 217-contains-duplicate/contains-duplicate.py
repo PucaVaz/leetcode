@@ -3,8 +3,9 @@ class Solution:
         visited = set()
         
         for number in nums:
-            if number not in visited:
-                visited.add(number)
+            if number in visited:
+                return True
+            visited.add(number) 
         
         if len(visited) < len(nums):
             return True
