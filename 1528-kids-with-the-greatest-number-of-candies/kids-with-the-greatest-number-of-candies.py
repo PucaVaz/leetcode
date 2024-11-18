@@ -3,6 +3,5 @@ class Solution:
         result = []
         for candy in candies:
             result.append((lambda x: x + extraCandies >= max(candies))(candy))
-        print(result)
         return result
                 
