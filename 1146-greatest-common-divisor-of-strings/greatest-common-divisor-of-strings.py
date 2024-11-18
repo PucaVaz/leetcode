@@ -12,10 +12,7 @@ class Solution:
             b = str2[i]
             if b == c: 
                 output += b
-        
 
-
-        # Valid str1 
         test1 = ""
         for i in range(len_str1//gcd):
             test1 += output 
@@ -23,7 +20,6 @@ class Solution:
         if str1 != test1:
             return ""
         
-        # Valid str2
         test2 = ""
 
         for i in range(len_str2//gcd):
@@ -35,6 +31,9 @@ class Solution:
         return output
     
 def find_gcd(a, b):
-    if a == 0:
-        return b
-    return find_gcd(b % a, a)
+    while b != 0:
+        remainder = a % b
+        a = b
+        b = remainder
+    return a
+
