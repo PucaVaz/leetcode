@@ -14,7 +14,9 @@ class Solution:
             l += 1
             r -= 1
         
-        pairs += songs[0] * (songs[0] - 1) // 2
-        pairs += songs[30] * (songs[30] - 1) // 2
+        if songs[0] > 1:
+            pairs += songs[0] * (songs[0] - 1) // 2
+        if songs[30] != 0:
+            pairs += songs[30] * (songs[30] - 1) // 2
 
         return pairs
