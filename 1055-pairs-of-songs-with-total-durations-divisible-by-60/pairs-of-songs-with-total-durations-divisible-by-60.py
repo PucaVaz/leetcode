@@ -1,7 +1,7 @@
 
 class Solution:
     def numPairsDivisibleBy60(self, time: List[int]) -> int:
-        songs = [0 for _ in range(0, 61)]
+        songs = [0 for _ in range(60)]
         pairs = 0
         for song in time:
             remainder = song % 60
