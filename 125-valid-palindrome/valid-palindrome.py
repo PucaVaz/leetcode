@@ -3,10 +3,7 @@ class Solution:
         filtered_string = self._filter_string(s)
         reversed_string = self._reverse_string(filtered_string)
 
-        if filtered_string != reversed_string:
-            return False
-        
-        return True
+        return filtered_string == reversed_string
   
     @staticmethod
     def _filter_string(s: str) -> str:
