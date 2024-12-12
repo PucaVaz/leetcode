@@ -1,22 +1,15 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        filtered_string = self._filter_string(s)
-        reversed_string = self._reverse_string(filtered_string)
+        l, r = 0, len(s) - 1
 
-        return filtered_string == reversed_string
-  
-    @staticmethod
-    def _filter_string(s: str) -> str:
-        new_s = ""
-        for c in s:
-            if c.isalnum():
-                new_s += c.lower()
-        return new_s
-    
-    @staticmethod
-    def _reverse_string(s: str) -> str:
-        new_s = ""
-        for i in range(len(s) - 1, -1, -1):
-            new_s += s[i]
-
-        return new_s
+        while l < r:
+            if not s[l].isalnum():
+                l += 1
+            elif not s[r].isalnum():
+                r -= 1
+            elif s[l].lower() != s[r].lower():
+                return False
+            else:
+                l += 1
+                r -= 1
+        return True
