@@ -1,11 +1,8 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        occr = set()
+        a = 0   
 
-        for num in nums:
-            if num in occr:
-                occr.remove(num)
-            else: 
-                occr.add(num)
+        for x in nums:
+            a ^= x
 
-        return occr.pop()
+        return a
