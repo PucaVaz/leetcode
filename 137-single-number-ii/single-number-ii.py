@@ -1,11 +1,10 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        seen = {}
+        ones = 0
+        twos = 0
 
         for num in nums:
-            seen[num] = seen.get(num, 0) + 1
+            ones = (ones ^ num) & ~twos
+            twos = (twos ^ num) & ~ones
 
-        for num in seen:
-            if seen[num] == 1:
-                return num
-        
+        return ones 
