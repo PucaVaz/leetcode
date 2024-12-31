@@ -1,9 +1,4 @@
 struct ListNode* deleteMiddle(struct ListNode* head) {
-    struct ListNode* prev = NULL;
-    struct ListNode* slow = head;
-    struct ListNode* fast = head;
-    int steps = 0; 
-
     if(head->next == NULL){
         return NULL; 
     }
@@ -11,6 +6,10 @@ struct ListNode* deleteMiddle(struct ListNode* head) {
         head->next = NULL; 
         return head; 
     }
+    struct ListNode* prev = NULL;
+    struct ListNode* slow = head;
+    struct ListNode* fast = head;
+    int steps = 0; 
     
     while (fast != NULL && fast->next != NULL)
     {
