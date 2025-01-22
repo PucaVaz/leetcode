@@ -2,12 +2,14 @@ class Solution:
     def firstUniqChar(self, s: str) -> int:
         occurrence = {}
 
-        for c in s:
-            occurrence[c] = occurrence.get(c, 0) + 1
-        
-        for i, c in  enumerate(s):
-            if occurrence[c] == 1:
-                return i
+        for i , c in enumerate(s):
+            if c not in occurrence:
+                occurrence[c] = [i, True]
+            else:
+                occurrence[c] = [i, False]
+
+        for c in occurrence:
+            if occurrence[c][1]:
+                return occurrence[c][0]
 
         return -1
-    
